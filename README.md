@@ -28,3 +28,7 @@
     若不匹配，開始分析本地的所有文件與記錄文件(patch.resdiff)的crc32值
     接著下載&解壓差異文件
     
+
+
+https://github.com/DMCDN/QTUpdate/assets/128150279/fc788936-c14f-48de-9668-670f0414a4e5
+
