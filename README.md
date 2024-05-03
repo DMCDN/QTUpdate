@@ -1,6 +1,8 @@
 # QTUpdate
 專題軟體使用的更新程式
 
+使用PyQt6製作UI，文件壓縮使用Zstd與LZMA
+
 ## 特點：
 * 盡可能壓縮更新所需總時間
 * 文件均經壓縮處理，僅須下載差異文件
@@ -22,7 +24,11 @@
         文件小於1kb
         壓縮比小於0.9
 #### patch.resdiff
-    0
+![image](https://github.com/DMCDN/QTUpdate/assets/128150279/6f70f552-7dab-4378-a40b-56b8f7c5a42e)
+
+    紀錄每個文件在patch.res中的訊息
+
+    下載文件時，header則設置{"Range": "bytes={offset}-{offset+size-1}"}
 #### 更新
     下載前，比對VersionConfig與軟體紀載的版本是否相同
     若不匹配，開始分析本地的所有文件與記錄文件(patch.resdiff)的crc32值
@@ -31,4 +37,17 @@
 
 
 https://github.com/DMCDN/QTUpdate/assets/128150279/fc788936-c14f-48de-9668-670f0414a4e5
+
+
+
+# 額外功能
+## 檢查軟體啟用狀態
+
+網頁使用Flask與SQLite製作一個檢查序號用的API
+
+首次使用有1小時試用時間，到期則會要求將程式顯示的序號，輸入至網站的啟用頁面
+
+透過進入 https://lwork.pythonanywhere.com 購買啟用權限輸入(購買流程開發中)
+
+https://github.com/DMCDN/QTUpdate/assets/128150279/cb95f7f4-4fb5-471c-a339-59f108c79881
 
